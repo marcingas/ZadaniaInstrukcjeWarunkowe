@@ -15,6 +15,27 @@ public class DeltaZadanie {
         //Math.sqrt(liczba)- pierwiastek
 
         quadraticEquationSolv(a, b, c);
+
+       //zadanie 2:
+        System.out.println("Podaj cenę produktu przed obniżką: ");
+       double price = scanner.nextDouble();
+        System.out.println("Podaj zniżkę jaką zastosować w %: ");
+        double discount = scanner.nextDouble() / 100;
+        System.out.println("Podaj ile maksymalnie w PLN może wynosić zniżka: podaj PLN: ");
+        double maxDiscount= scanner.nextDouble();
+        
+        PriceDiscountCounter(price, discount, maxDiscount);
+
+
+    }
+
+    private static void PriceDiscountCounter(double price, double discount, double maxDiscount) {
+        if((price * (1-discount)) >= (price - maxDiscount)){
+            price *= (1-discount);
+        } else{
+            price -= maxDiscount;
+        }
+        System.out.println("Cena po zniżce wynosi: " + price);
     }
 
     private static void quadraticEquationSolv(int a, int b, int c) {
