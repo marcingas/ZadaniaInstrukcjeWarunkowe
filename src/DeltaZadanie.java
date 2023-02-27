@@ -26,7 +26,6 @@ public class DeltaZadanie {
         
         PriceDiscountCounter(price, discount, maxDiscount);
 
-
     }
 
     private static void PriceDiscountCounter(double price, double discount, double maxDiscount) {
@@ -53,7 +52,6 @@ public class DeltaZadanie {
             System.out.println("Dla delty < 0 nie ma rozwiązania");
         }
     }
-
     private static int getDelta(int a, int b, int c) {
         int delta = (int) Math.pow(b,2) - 4 * a * c;
         return delta;
