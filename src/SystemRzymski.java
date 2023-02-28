@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Zadania {
+public class SystemRzymski {
     public static void main(String[] args) {
         //Kalkulator rzymski:
         String romanNumbers [] = {"M","CM","D","CD","C","XC","L","XL","X", "IX", "V", "IV", "I"};
