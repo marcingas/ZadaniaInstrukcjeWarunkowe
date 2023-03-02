@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DeltaZadanie {
+public class DeltaChallenge {
     public static void main(String[] args) {
     //a * x^2 + b * x + c = 0
     Scanner scanner = new Scanner(System.in);

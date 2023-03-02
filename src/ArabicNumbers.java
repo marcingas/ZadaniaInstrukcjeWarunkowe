@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SystemArabski {
+public class ArabicNumbers {
     public static void main(String[] args) {
         String romanNumbers [] = {"M","CM","D","CD","C","XC","L","XL","X", "IX", "V", "IV", "I"};
         int[] arabNumbers = {1000,900,500,400,100,90,50,40,10, 9, 5, 4, 1};

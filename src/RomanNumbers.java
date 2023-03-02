@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class SystemRzymski {
+public class RomanNumbers {
     public static void main(String[] args) {
         //Kalkulator rzymski:
         String romanNumbers [] = {"M","CM","D","CD","C","XC","L","XL","X", "IX", "V", "IV", "I"};
@@ -17,7 +17,7 @@ public class SystemRzymski {
                    while (number >= arabNumbers[a]) {
                         sb.append(romanNumbers[a]);
                         number -= arabNumbers[a];
-                    }
+                   }
             }
         System.out.println("Twoja liczba: " + number1 + " w systemie rzymskim wygląda następująco: " + sb);
     }
