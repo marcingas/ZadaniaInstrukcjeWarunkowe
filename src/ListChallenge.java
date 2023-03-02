@@ -25,25 +25,44 @@ public class ListChallenge {
         for(int i = 0; i < tempInt1.length; i++){
             tempInt1[i]= Integer.parseInt(temp1[i]);
         }
-        boolean flag = ifSorted(tempInt1);
-        if(flag) {
+        boolean flagCheck1 = ifSorted(tempInt1);
+        boolean flag1 = flagCheck1;
+        if(flag1) {
             for (int j = 0; j < temp1.length; j++) {
                 list1.add(tempInt1[j]);
             }
-            flag = false;
+            flag1 = false;
         }
         //tablica 2 ze sprawdzeniem czy jest posortowana:
 
         for (int i = 0; i < tempInt2.length; i++){
             tempInt2[i] = Integer.parseInt(temp2[i]);
         }
-        flag = ifSorted(tempInt2);
-        if(flag) {
+        boolean flagCheck2 = ifSorted(tempInt2);
+        boolean flag2 = flagCheck2;
+
+        if(flag2 && flagCheck1) {
             for (int j = 0; j < temp2.length; j++) {
                 list2.add(tempInt2[j]);
             }
-            flag = false;
+            flag2 = false;
         }
+        //scalenie 2 tablic do jednej:
+        for(int i = 0; i < list2.size(); i++){
+            list1.add(list2.get(i));
+        }
+        //posortowanie tablicy:
+        for(int j = 0; j < list1.size()-1; j++){
+            for(int i = 0; i < list1.size()-j -1; i++){
+                if(list1.get(i) > list1.get(i+1)){
+                    int temp = list1.get(i);
+                    list1.set(i,list1.get(i+1));
+                    list1.set(i+1,temp);
+                }
+            }
+        }
+        if(flagCheck1 && flagCheck2){
+            System.out.println("Posortowana i połączona nowa lista: \n " +list1.toString());}
     }
 
     public static boolean ifSorted(int[]table){
