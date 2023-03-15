@@ -51,6 +51,7 @@ public class ListChallenge {
         for(int i = 0; i < list2.size(); i++){
             list1.add(list2.get(i));
         }
+        System.out.println(list1.toString());
         //posortowanie tablicy:
         for(int j = 0; j < list1.size()-1; j++){
             for(int i = 0; i < list1.size()-j -1; i++){
