@@ -60,14 +60,23 @@ public class SongContest {
                 if (points[i][1].equals(winners[j][0])) {
                     if (winners[j][1] == null)
                         winners[j][1] = 0;
+                    if((Integer) points[i][2] == 12)
                     winners[j][1] = (Integer) points[i][2] + (Integer) winners[j][1];
                 }
             }
         }
-
+        int max = (Integer)winners[0][1];
+        int count = 0;
         for (int i = 0; i < winners.length; i++) {
             System.out.println("Kraj" + winners[i][0] + " ma pkt:" + winners[i][1]);
+            if((Integer)winners[i][1]== null)
+                winners[i][1]= 0;
+            if((Integer)winners[i][1]> max){
+                max = (Integer)winners[i][1];
+                count = i;
+            }
 
         }
+        System.out.println("Zwycięzcą konkursu jest: " + winners[count][0] );
     }
 }
