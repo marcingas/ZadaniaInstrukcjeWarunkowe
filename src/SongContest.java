@@ -42,8 +42,8 @@ public class SongContest {
                     " możesz zagłosować na 3 pozostałe kraje na poniższej liście: " +
                     countries + "dając im 8,10 lub 12 punktów");
             for(int j = 0; j < 3;j++){
+                    points[i][2]=0;
 
-                points[i][2]=0;
                 System.out.println("podaj nazwę" +(j+1)+ " kraju, na który głosujesz");
                 String countryVote = scanner.nextLine();
                 points[i][1] = countryVote;
@@ -66,13 +66,20 @@ public class SongContest {
         }
 
 
+       winners[0][1]=0;
+        for(int i = 0; i < winners.length;i++){
 
+            if(winners[i][0].equals(points[i][1])){
+                winners[i][1] = (Integer)points[i][2]+ (Integer)winners[i][1];
+            }
+        }
 
+        int max;
+        for(int i = 0; i < winners.length;i++){
+            for(int j = 0;j < winners[i].length;j++ )
+            System.out.println(winners[i][j]);
 
-
-
-        points[0][0]="PL";
-        points[0][1]=0;
+        }
 
 //        for(int i = 0; i < points.length;i++){
 //            System.out.println("Kto:" + points[i][0]);
