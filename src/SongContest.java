@@ -7,7 +7,7 @@ public class SongContest {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Podaj listę krajów biorących udział w konkursie oddzielonych przecinkiem: (ex: PL,ES,DE,BE itd ");
+        System.out.println("Podaj listę krajów biorących udział w konkursie oddzielonych przecinkiem: (ex: PL,ES,DE,BE itd)");
         String countryInput= scanner.nextLine();
         String[]countryTable = countryInput.split(",");
         StringBuilder countries = new StringBuilder("");
@@ -44,7 +44,7 @@ public class SongContest {
             for(int j = 0; j < 3;j++){
                     points[i][2]=0;
 
-                System.out.println("podaj nazwę" +(j+1)+ " kraju, na który głosujesz");
+                System.out.println("podaj nazwę" +(j+1)+ " kraju (" +countries+"), na który głosujesz");
                 String countryVote = scanner.nextLine();
                 points[i][1] = countryVote;
                 System.out.println("podaj liczbę punktów");
@@ -66,18 +66,22 @@ public class SongContest {
         }
 
 
-       winners[0][1]=0;
-        for(int i = 0; i < winners.length;i++){
+       winners[0][1]= 0;
+        for(int i = 0; i < points.length;i++){
+            for(int j = 0; j< winners.length; j++){
 
-            if(winners[i][0].equals(points[i][1])){
-                winners[i][1] = (Integer)points[i][2]+ (Integer)winners[i][1];
+            if(points[i][1].equals(winners[j][0])) {
+                if(winners[j][1]==null)
+                    winners[j][1]=0;
+                winners[j][1] = (Integer) points[i][2] + (Integer) winners[j][1];
+                System.out.println(winners[j][1]);
+            }
             }
         }
 
         int max;
         for(int i = 0; i < winners.length;i++){
-            for(int j = 0;j < winners[i].length;j++ )
-            System.out.println(winners[i][j]);
+            System.out.println("Kraj" + winners[i][0] + " ma pkt:"+ winners[i][1]);
 
         }
 
