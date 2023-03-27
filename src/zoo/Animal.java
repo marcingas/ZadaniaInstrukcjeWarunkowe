@@ -10,6 +10,9 @@ public class Animal {
         this.age = age;
         this.isWild = isWild;
     }
+
+
+
     public String giveVoice(){
         return "usual Animal voice ";
     }
