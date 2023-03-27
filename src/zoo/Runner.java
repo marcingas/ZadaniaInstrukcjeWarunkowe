@@ -14,7 +14,13 @@ public class Runner {
         zoo.add(dog);
         zoo.add(tiger);
 
-
+//        first version:
+        for(int i = 0; i < zoo.size(); i++){
+            Animal animal = zoo.get(i);
+            System.out.println(animal.getClass().getSimpleName() +" gives voice: " + animal.giveVoice());
+        }
+        System.out.println("version 2: ");
+// second version:
         for (Animal animal : zoo) {
             System.out.println(animal.getClass().getSimpleName() + " gives voice: " + animal.giveVoice());
         }
