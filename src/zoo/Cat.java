@@ -1,6 +1,6 @@
 package zoo;
 
-public class Cat {
+public class Cat extends Animal{
     private String name;
     private int age;
 
@@ -8,9 +8,7 @@ public class Cat {
 
 
     public Cat(String name, int age, boolean isWild) {
-        this.name = name;
-        this.age = age;
-        this.isWild = isWild;
+        super(name,age,isWild);
     }
 
     public String giveVoice() {
