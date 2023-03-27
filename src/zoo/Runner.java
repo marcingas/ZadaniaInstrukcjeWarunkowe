@@ -18,6 +18,7 @@ public class Runner {
         for(int i = 0; i < zoo.size(); i++){
             Animal animal = zoo.get(i);
             System.out.println(animal.getClass().getSimpleName() +" gives voice: " + animal.giveVoice());
+            System.out.println(animal.doVildThings(animal.getIsWild()));
         }
         System.out.println("version 2: ");
 // second version:
