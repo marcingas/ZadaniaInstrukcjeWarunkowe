@@ -9,4 +9,9 @@ public class Tiger extends Animal{
     public String giveVoice(){
         return "Grrrrr!!!!!!!!";
     }
+
+    @Override
+    public String toString() {
+        return "Tiger " + getName();
+    }
 }

@@ -3,16 +3,20 @@ package zoo;
 public class Animal {
     private String name;
     private int age;
-    private boolean isWild;
+    private boolean Wild;
 
-    public boolean getIsWild() {
-        return isWild;
+    public String getName() {
+        return name;
     }
 
-    public Animal(String name, int age, boolean isWild) {
+    public boolean IsWild() {
+        return Wild;
+    }
+
+    public Animal(String name, int age, boolean Wild) {
         this.name = name;
         this.age = age;
-        this.isWild = isWild;
+        this.Wild = Wild;
     }
 
 
@@ -20,11 +24,16 @@ public class Animal {
     public String giveVoice(){
         return "usual Animal voice ";
     }
-    public String doVildThings(boolean isWild){
-        if(isWild){
+    public String doWildThings(boolean Wild){
+        if(Wild){
             return "Doing vild things";
         }else {
-            return "nice " + getClass().getSimpleName();
+            return "nice " + toString();
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Animal "+ name;
     }
 }

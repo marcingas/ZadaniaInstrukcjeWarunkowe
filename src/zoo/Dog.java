@@ -10,4 +10,9 @@ public class Dog extends Animal{
     public String giveVoice() {
         return "hau hau";
     }
+
+    @Override
+    public String toString() {
+        return "Dog " + getName();
+    }
 }
