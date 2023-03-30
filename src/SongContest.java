@@ -1,19 +1,60 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class SongContest {
 
-    public static void main(String[] args) {
+    private void a(String... params){
+        int length = params.length;
+        String[] names = { "Marcin", ""};
+    }
 
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        List<String> names = List.of("Anna", "Marcin", "Elzbieta", "Ela", "Marek", "Mariolka", "Piotrek");
+        names.stream()
+            .filter(name -> {
+                System.out.println("filter: " + name);
+                return name.startsWith("M");
+            })
+            .map(name -> {
+                String newName = "map: " + name;
+                System.out.println(newName);
+                return 1;
+            })
+            .forEach(System.out::println);
+
+
+       /* Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj listę krajów biorących udział w konkursie oddzielonych przecinkiem: (np: PL,DE itd)");
         String countryInput = scanner.nextLine();
 
+        // ? wyciagnac od uzytkownika ile chce podaac krajow
+        int lenght = 4;
+        int rowsCount = lenght * 3;
+        int columnCount = 3;
+        String[][] points2 = new String[rowsCount][columnCount];
 
-        String[] countryTable = countryInput.split(",");
+        for (int i = 0; i < rowsCount; i++) {
+                System.out.println("podaj od kogo sa punkty");
+                String fromCoutrny = scanner.next();
+                points2[i][0] = fromCoutrny;
+
+                System.out.println("podaj dla kogo");
+                String toCountry = scanner.next();
+                points2[i][1] = toCountry;
+
+                System.out.println("podaj punkty");
+                String points = scanner.next();
+                points2[i][2] = points;
+        }
+
+        // tworzymy tabelke winners -> iterujemy sie po points -> patrzymy tam gdzie jest 12 -> updatujemy winners
+
+        String[] countryTable = countryInput.split(","); // ["PL", "DE", "SK", "A"]
         StringBuilder countriesListTemp = new StringBuilder("");
-        int lenght = countryTable.length;
+        //int lenght = countryTable.length;
         while (lenght < 4) {
             System.out.println("Musisz podać conajmniej 4 kraje!");
             System.out.println("Podaj listę krajów biorących udział w konkursie oddzielonych przecinkiem: (np: PL,DE itd)");
@@ -25,7 +66,7 @@ public class SongContest {
             lenght = countryTable.length;
 
         }
-        Object[][] winners = new Object[lenght][2];
+        Object[][] winners = new Object[lenght][2];// [ "PL", "DE", "8" ]
 
         for (int i = 0; i < countryTable.length; i++) {
             winners[i][0] = countryTable[i];
@@ -82,20 +123,9 @@ public class SongContest {
                 i++;
             }
         }
-        //przypisanie pkt do tablicy winners:
-        winners[0][1] = 0;
-        for (int i = 0; i < points.length; i++) {
-            for (int j = 0; j < winners.length; j++) {
 
-                if (points[i][1].equals(winners[j][0])) {
-                    if (winners[j][1] == null)
-                        winners[j][1] = 0;
-                    if ((Integer) points[i][2] == 12)
-                        winners[j][1] = (Integer) points[i][2] + (Integer) winners[j][1];
-                }
-            }
-        }
-//        wyszukanie największej liczby pkt:
+        assignPointsToWinners(winners, points);
+        //        wyszukanie największej liczby pkt:
         int max = (Integer) winners[0][1];
         int count = 0;
         for (int i = 0; i < winners.length; i++) {
@@ -116,4 +146,19 @@ public class SongContest {
             }
         }
     }
-}
+
+    private static void assignPointsToWinners(Object[][] winners, Object[][] points) {
+        winners[0][1] = 0;
+        for (int i = 0; i < points.length; i++) {
+            for (int j = 0; j < winners.length; j++) {
+
+                if (points[i][1].equals(winners[j][0])) {
+                    if (winners[j][1] == null)
+                        winners[j][1] = 0;
+                    if ((Integer) points[i][2] == 12)
+                        winners[j][1] = (Integer) points[i][2] + (Integer) winners[j][1];
+                }
+            }
+        */}
+    }
+
