@@ -3,20 +3,20 @@ package zoo;
 public class Animal {
     private String name;
     private int age;
-    private boolean Wild;
+    private boolean wild;
 
     public String getName() {
         return name;
     }
 
     public boolean IsWild() {
-        return Wild;
+        return wild;
     }
 
-    public Animal(String name, int age, boolean Wild) {
+    public Animal(String name, int age, boolean wild) {
         this.name = name;
         this.age = age;
-        this.Wild = Wild;
+        this.wild = wild;
     }
 
 
