@@ -1,6 +1,6 @@
 package zoo;
 
-public class Animal {
+public abstract class Animal {
     private String name;
     private int age;
     private boolean wild;
@@ -19,11 +19,8 @@ public class Animal {
         this.wild = wild;
     }
 
+    public abstract String giveVoice();
 
-
-    public String giveVoice(){
-        return "usual Animal voice ";
-    }
     public String doWildThings(boolean Wild){
         if(Wild){
             return "Doing vild things";
