@@ -14,6 +14,11 @@ public class Runner {
         zoo.add(dog);
         zoo.add(tiger);
 
+
+
+
+
+
 //        first version:
         for(int i = 0; i < zoo.size(); i++){
             Animal animal = zoo.get(i);

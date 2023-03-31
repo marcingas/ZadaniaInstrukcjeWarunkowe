@@ -6,6 +6,8 @@ public class Tiger extends Animal{
     public Tiger(String name, int age, boolean isWild) {
         super(name,age,isWild);
     }
+
+    @Override
     public String giveVoice(){
         return "Grrrrr!!!!!!!!";
     }
